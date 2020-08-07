@@ -1,4 +1,5 @@
-心中苟有所开，即便札记。不则还塞之矣。原文链接(https://blog.pragmaticengineer.com/the-product-minded-engineer/)
+心中苟有所开，即便札记。不则还塞之矣。
+原文链接(https://blog.pragmaticengineer.com/the-product-minded-engineer/)
 ```
 Product-minded engineers are developers with lots of interest in the 
 product itself.They want to understand why decisions are made, how 
@@ -69,6 +70,16 @@ product-related questions. Even though they ask many questions,
 doing this frequently, they manage not to annoy people, as they've 
 built up strong relationships with them.
 ```
+#### 3. 好奇心和对“为什么”的兴趣
+具有产品思维的工程师，对于任何事情，都倾向于去理解其背后的原因。  
+为什么给这个产品构建这个特性？为什么不选择另一个特性？  
+为什么要发布这个里程碑，而不是选择另一个相对简单的多的里程碑？    
+关于度量的方法 - 为什么我们不选择另外一种更彻底的方式去度量？  
+
+他们会自主的找到他们能找到的答案。  
+他们也会去找产品经理和商业市场相关的人，咨询产品相关的问题。  
+虽然可能会很频繁的问很多问题，由于跟这些人建立了良好的关系，
+这些工程师是不会打扰到产品经理们的。
 
 知识点:  
 * proactive: 积极主动。 pro-和re-是反义前缀    
