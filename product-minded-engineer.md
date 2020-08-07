@@ -18,6 +18,7 @@ products, product-minded engineers take teams to a new level of impact.
   
 ```
 1. Proactive with product ideas/opinions
+
 Product-minded engineers don’t settle for getting a specification and 
 jumping to implement it. They think about other ideas and approach 
 the product manager with these. They often challenge existing 
@@ -32,6 +33,7 @@ work better.
   
 ```
 2. Interest in the business, user behavior and data on this
+
 When coming with ideas, product-minded engineers don't just get 
 these from thin air. They take the time to understand how the business 
 works, how the product fits in, and what its goals are. They are also 
@@ -51,3 +53,33 @@ next trait I've observed.
 他们通常会深入研究商业和用户各种纬度返回的统计数据，并且竭尽全力的获取这些数据。  
 如果可能的话，他们会直接拿到数据，或者找产品经理或数据科学家去要这些信息。  
 并且可能就是处于好奇才做这些事情。这是我观察到的下一个特征  
+
+```
+3. Curiosity and a keen interest in "why?"
+
+Product-minded engineers like to understand the "why?" behind all 
+things. Why build this feature for the product, why not the other one? 
+Why ship this first milestone, instead of choosing another one, that's a 
+lot simpler to build? How will things be measured - why don't we 
+choose a more thorough way to measure things?
+
+They are autonomous in finding answers they can, by themselves. They 
+turn to the product manager and other people in the business for other, 
+product-related questions. Even though they ask many questions, 
+doing this frequently, they manage not to annoy people, as they've 
+built up strong relationships with them.
+```
+
+知识点:  
+* proactive: 积极主动。 pro-和re-是反义前缀    
+* settle for/settle: 勉强同意接受    
+    settle 有停留安顿的含义，衍生出将就、凑合、妥协的含义  
+* specification: 说明书  
+* jump to: 匆匆忙忙、很快，甚至有些草率  
+* approach: 做动词时，找（某人）谈话、与（某人）打交道；做名词时，处理（方法）  
+* thin air: 凭空  
+* fit in: 融入，合适  
+* empathy: 感同身受，理解，共鸣    
+* sympathy: 同情，怜悯  
+* dive to: 一头扎进去、立刻去做  
+* metric: （软件）度量  
