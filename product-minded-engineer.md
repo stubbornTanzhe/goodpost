@@ -25,7 +25,7 @@ specifications, suggesting alternative product approaches, that might
 work better.
 ```
   
-##### 1. 主动参与产品的头脑风暴、意见收集
+#### 1. 主动参与产品的头脑风暴、意见收集
 具有产品思维的工程师，不会满足于拿到一个文档然后就略带草率的实现它。  
 他们会思考，并且带着自己的思考去跟产品精力交流。  
 他们会经常对现有的文档进行挑战，给出更好的替代性的方法。  
@@ -44,7 +44,7 @@ information. They do this because of their curious nature. This is the
 next trait I've observed.
 ```
   
-##### 2. 对商业、用户行为和数据的兴趣
+#### 2. 对商业、用户行为和数据的兴趣
 具有产品思维的工程师，他们的思考和想法，都不是凭空而来的。  
 他们会花时间去理解商业的运转，产品配合商业的运转，以及最终的目标所在。  
 他们会去换位思考产品给用户的感受以及用户最终通过使用这个产品获得的价值。  
