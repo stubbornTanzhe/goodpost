@@ -79,9 +79,35 @@ built up strong relationships with them.
 他们会自主的找到他们能找到的答案。  
 他们也会去找产品经理和商业市场相关的人，咨询产品相关的问题。  
 虽然可能会很频繁的问很多问题，由于跟这些人建立了良好的关系，
-这些工程师是不会打扰到产品经理们的。
+这些工程师是不会打扰到产品经理们的。  
 
-知识点:  
+
+```
+4. Strong communicators and great relationships with non-engineers
+
+Product-minded engineers like talking with people outside 
+engineering, learning about what and why they do. They are smooth 
+communicators, making it clear they're interested in learning more 
+about how other disciplines work. I frequently see them grabbing 
+coffee, lunch, or doing a hallway chat with non-engineers.
+```
+
+#### 4. 强大的沟通能力，与非工程师同事建立良好的关系  
+具有产品思维的工程师喜欢与工程师之外的人们交流，  
+学习了解他们在做什么以及为什么他们做的原因。  
+他们善于沟通，很明显，他们会对学习其他学科工作有浓厚兴趣。  
+我经常看到他们与其他领域的同事们一起喝咖啡，一起吃午饭，以及在走廊上聊天  
+
+
+```
+
+
+
+```
+
+
+
+### 知识点:  
 * proactive: 积极主动。 pro-和re-是反义前缀    
 * settle for/settle: 勉强同意接受    
     settle 有停留安顿的含义，衍生出将就、凑合、妥协的含义  
