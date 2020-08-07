@@ -100,7 +100,29 @@ coffee, lunch, or doing a hallway chat with non-engineers.
 
 
 ```
+5. Offering product/engineering tradeoffs upfront
 
+Because they have a strong understanding of the product "why," as 
+well as the engineering side of things, they can bring suggestions that 
+few other people can. For example, when scoping the effort to build the 
+product, the engineering effort to build a key feature might be 
+significant. Many engineers would start to look for ways to reduce the 
+effort and try to figure out what the impact of the reduced effort would 
+mean for the feature itself.
+
+Product-minded engineers attack this problem from both angles: both 
+looking for engineering tradeoffs and what the product impact is. 
+They also start making product tradeoffs, evaluating the engineering impact. 
+They often go back to the product manager, suggesting a completely 
+different feature to be built, given the product impact would be similar, 
+but the engineering effort vastly smaller.
+
+Juggling both the product and engineering tradeoffs and the impact 
+of each is a unique strength product-minded engineers have. They 
+can quickly go back-and-forth between the two sides of the same coin: 
+product features and engineering effort and tradeoffs. Because they do 
+it all in their head, using their engineering and product insights, they 
+get to valuable conclusions remarkably quickly.
 
 
 ```
@@ -120,3 +142,9 @@ coffee, lunch, or doing a hallway chat with non-engineers.
 * sympathy: 同情，怜悯  
 * dive to: 一头扎进去、立刻去做  
 * metric: （软件）度量  
+* curiosity/keen interest: 好奇心/浓厚的兴趣
+* ship the milestone: 发布某一阶段的成果
+* autonomous: 自治
+* turn to: （找某人）寻求帮助
+* manage to: 强调成功做到一件比较困难的事
+* communicator: （善于）交际者、交流者
