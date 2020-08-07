@@ -164,16 +164,110 @@ Can the product be slightly modified, so this edge case won't occur?
 ```
 
 #### 6. 以务实的方式处理边缘案例边缘案例是一件很有意思的事情。
-有的工程师经常会忘记边缘案例的存在，最后从产品测试人员或最终用户那里得到反馈之后，
-才不得不回过头来解决这些问题。这是一个极端，而另一方面，如果在一个新产品或功能中试图处理所有可能的边缘情况，
-则可能会耗费大量的时间。具有产品意识的工程师会很快制定出关于边缘案例的计划，并思考如何减少工作量，
-并经常会找到不需要额外工作量的解决方案。他们专注于“最小可爱产品”的概念，
-评估边缘案例的影响和处理所需的工作量。他们会提供很好的折衷建议: 在发布早期版本之前，
-列出大多数可能出错的地方，并提出需要解决哪些边缘案例的建议。
-例如，对于一个千分之一的用户可能会遇到的错误，他们会考虑修复这一错误涉及的工作量，
-以及如果什么都不做会发生的后果。在产品验证过程中，客服专员是否可以在这个案例中帮助用户？
-用户下一次再遇到同样问题可以自己尝试成功解决吗？对产品进行略微调整，是否就可以避免边缘案例？
+有的工程师经常会忘记边缘案例的存在，最后从产品测试人员或最终用户那里得到反馈之后，  
+才不得不回过头来解决这些问题。这是一个极端，而另一方面，如果在一个新产品或功能中试图处理所有可能的边缘情况，  
+则可能会耗费大量的时间。具有产品意识的工程师会很快制定出关于边缘案例的计划，并思考如何减少工作量，  
+并经常会找到不需要额外工作量的解决方案。他们专注于“最小可爱产品”的概念，  
+评估边缘案例的影响和处理所需的工作量。他们会提供很好的折衷建议: 在发布早期版本之前，    
+列出大多数可能出错的地方，并提出需要解决哪些边缘案例的建议。  
+例如，对于一个千分之一的用户可能会遇到的错误，他们会考虑修复这一错误涉及的工作量，  
+以及如果什么都不做会发生的后果。在产品验证过程中，客服专员是否可以在这个案例中帮助用户？  
+用户下一次再遇到同样问题可以自己尝试成功解决吗？对产品进行略微调整，是否就可以避免边缘案例？  
 
+
+```
+7. Quick product validation cycles
+Even before the feature they are working on is production-ready, 
+product-minded engineers find creative ways to get early feedback. 
+This could be doing hallway testing with colleagues, showing the 
+work-in-progress feature to the product manager, organizing a 
+team bug bash on the beta build, and many other, creative ways. 
+They are continuously thinking: “how can we validate that people 
+will use this feature, the way we think they will?”
+```
+
+#### 7. 快速的产品验证周期
+甚至在开发的产品功能可以上线之前，具有产品思维的工程师们早就已经找到  
+创造性的方法来获取早期的反馈意见。他们可以和同事一起进行走廊测试，可  
+以向产品经理演示尚在开发中的功能，也可以在 Beta 版本发布前组织整个团  
+队来一场“漏洞大扫荡”，当然还有许多其他创造性的方法。他们会一直思考这个问题：  
+“我们怎样才能验证用户们会像我们预期的那样来使用这个功能？”  
+
+
+```
+8. End-to-end product feature ownership
+
+Most experienced engineers own their work end-to-end: from getting 
+the specification, through implementing it, all the way to rolling it out 
+and validating that it works correctly. Product-minded engineers often 
+go a step beyond this.
+
+They consider their work done only after getting results on user 
+behavior and business metrics. After rollout, they still actively engage 
+with product managers, data scientists, and customer support 
+channels, to learn how the feature is being used in the real world. It can 
+take weeks to get enough reliable data to draw conclusions. Even 
+though they might be working on a new project, they make checking on 
+the results one of their top priorities. It's not a time-consuming 
+activity, but it needs that additional persistence from someone wanting 
+to know: how is my work really doing?
+
+When a feature performs worse than expected, they are curious to 
+understand where the mismatch was. They are just as interested in 
+finding the root cause between the product plan and the real world 
+result, as they are to debug a hard-to-reproduce bug in the codebase. 
+They'll often spend a good amount of time debating hypothesizes and 
+learnings with the product manager and data scientists.
+```
+
+#### 8.对产品功能从头至尾负责到底
+经验丰富的工程师们都会对他们的工作从头至尾负责到底：从拿到产品规范到部署实施，  
+再到发布产品并最终验证产品能否正常工作。除了上述这些工作以外，具有产品意识的工程师  
+通常会举一反三、再进一步。他们坚信，只有在获得用户行为和商业指标的结果之后，  
+他们的工作才算全部完成。产品上线后，他们仍然会积极与产品经理、数据专家和客户支持渠道保持密切沟通，  
+以便了解产品功能在现实世界中的使用情况。要获得足够得出结论的可靠数据通常需要几周时间。  
+即使他们可能已经接手下一个新项目，他们仍然会把检查上一项目的成果作为首要任务之一。  
+这并不是一项特别耗时的活动，但是特别需要一种锲而不舍的精神，推动那些想要知道自己的  
+辛勤劳动究竟效果如何的工程师们，去坚持探寻答案。当开发的某项功能表现得不如预期时，  
+他们会特别好奇问题出在哪里？他们对于找到产品计划和现实世界结果之间存在差距的根本原因  
+怀有浓厚的兴趣，程度不亚于他们在代码库中找到难以复现的缺陷并成功除错。  
+他们经常会花费大量的时间，就某些假设和心得与产品经理和数据专家展开辩论。  
+
+
+```
+9. Strong product instincts through repeated cycles of learning
+
+A typical project for a product-minded engineer usually goes like this:
+1.They ask a lot of questions to understand exactly why the product 
+feature is being built.
+2.They bring suggestions and tradeoffs to the table, some of which are 
+included in the revised spec.
+3.They build the feature quickly, getting early feedback, as they do.
+4.After shipping the feature, they actively follow up to understand if 
+the feature lives up to the expectation.
+5.When it does not, they dig deep, to understand why it did not and 
+learn something new about product usage in the real world.
+After each project, their product understanding deepens, and they 
+start to develop better and better product instincts. The next time, 
+they’ll bring even more relevant suggestions to the table. Over time, 
+they become a goto person for product managers, their advice being 
+sought well before projects are kicked off. They build a strong 
+reputation outside the team, opening more doors for their continued 
+career growth.
+```
+
+#### 9. 通过反复循环的学习，形成强大的产品本能
+对于有产品意识的工程师来说，一个典型的项目通常是这样的：  
+1. 他们会提出很多问题，来准确理解构建产品功能的原因；  
+2. 他们会提供建议和取舍方案，其中某些建议会反映在修订后的产品设计规范中；  
+3. 他们会很快开发出相关功能，以便尽早得到反馈意见；  
+4. 在产品发布之后，他们会积极跟进了解相关产品功能是否符合预期；  
+5. 如果没有达到预期，他们会深入挖掘原因，并学到产品在现实世界中使用的新知识。  
+每完成一个项目，他们对产品的理解就会加深，他们开始培养起越来越好的产品直觉。  
+等到下一个项目，他们会贡献更多有价值的建议。  
+随着时间推移，他们会成为产品经理最愿意去讨教的大专家，  
+在新的项目还未开始之前就会提前去征求他们的意见。  
+他们将名声在外，为持续的职业发展打开更多的大门。  
 
 ### 知识点:  
 * proactive: 积极主动。 pro-和re-是反义前缀    
@@ -206,4 +300,17 @@ Can the product be slightly modified, so this edge case won't occur?
 * focused: 目标明确的
 * minimum lovable product: 最小可行性产品
 * middle ground: 妥协、中间地带
- 
+* work-in-progress: wip，在建项目(我司常用于;))
+* bug bash: 找bug
+* ownership: 负责
+* even if/though: 即使、就算、哪怕/尽管、虽然
+* priority: 优先的
+* persistence: 从头至尾
+* instinct: 本能
+* bring sth to the table: 提供（意见、建议等）、贡献（技能、经验等）
+* live up to: 遵守（诺言）、符合（预期）、不辜负（期望）
+* relevant/irrelevant: 有意义的、密切相关的
+* a go-to person: 大拿
+* kick off: （会议）开始、（项目）启动  
+
+一点感受：团队中puppy便是典型的product-minded engineer，我要向他学习;)
