@@ -1,4 +1,4 @@
-心中苟有所开，即便札记。不则还塞之矣。
+心中苟有所开，即便札记。不则还塞之矣。  
 原文链接(https://blog.pragmaticengineer.com/the-product-minded-engineer/)
 ```
 Product-minded engineers are developers with lots of interest in the 
