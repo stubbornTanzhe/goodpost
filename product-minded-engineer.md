@@ -139,6 +139,42 @@ get to valuable conclusions remarkably quickly.
 由于他们利用其工程和产品两方面的洞察力，在头脑中快速完成上述权衡，所以他们能够很快得出有价值的结论。  
 
 
+```
+6. Pragmatic handling of edge cases
+
+Edge cases are a funny thing. On one extreme, engineers often forget 
+about many of these, having to come back to addressing them, after 
+getting feedback from people testing the product or end users. On the 
+other hand, handling all possible edge cases in a new product or feature 
+can take a lot of time.
+
+Product-minded engineers quickly map out edge cases and think of 
+ways to reduce work on them: often bringing solutions that require 
+no engineering work. They are focused on the "minimum lovable product concept" 
+and evaluate the impact of an edge case and the effort of handling it. 
+They come with good middle-ground suggestions: mapping out most things 
+that can go wrong and bring suggestions on what edge cases need to be addressed, 
+before shipping even an early version.
+
+For example, if one in a thousand users might be hit by an error, 
+they will consider the effort to fix it and think about what happens 
+if they don't do anything. Can customer support help the person in this case, 
+during validation? Can the user just retry and succeed the next time? 
+Can the product be slightly modified, so this edge case won't occur?
+```
+
+#### 6. 以务实的方式处理边缘案例边缘案例是一件很有意思的事情。
+有的工程师经常会忘记边缘案例的存在，最后从产品测试人员或最终用户那里得到反馈之后，
+才不得不回过头来解决这些问题。这是一个极端，而另一方面，如果在一个新产品或功能中试图处理所有可能的边缘情况，
+则可能会耗费大量的时间。具有产品意识的工程师会很快制定出关于边缘案例的计划，并思考如何减少工作量，
+并经常会找到不需要额外工作量的解决方案。他们专注于“最小可爱产品”的概念，
+评估边缘案例的影响和处理所需的工作量。他们会提供很好的折衷建议: 在发布早期版本之前，
+列出大多数可能出错的地方，并提出需要解决哪些边缘案例的建议。
+例如，对于一个千分之一的用户可能会遇到的错误，他们会考虑修复这一错误涉及的工作量，
+以及如果什么都不做会发生的后果。在产品验证过程中，客服专员是否可以在这个案例中帮助用户？
+用户下一次再遇到同样问题可以自己尝试成功解决吗？对产品进行略微调整，是否就可以避免边缘案例？
+
+
 ### 知识点:  
 * proactive: 积极主动。 pro-和re-是反义前缀    
 * settle for/settle: 勉强同意接受    
@@ -164,3 +200,10 @@ get to valuable conclusions remarkably quickly.
 * back-and-forth: 来来回回
 * two sides of the coin: 一个硬币的正反面
 * insight: 洞察
+* edge case: 边缘案例
+* pragmatic: 非常务实
+* map out: 计划、规划、提前安排
+* focused: 目标明确的
+* minimum lovable product: 最小可行性产品
+* middle ground: 妥协、中间地带
+ 
