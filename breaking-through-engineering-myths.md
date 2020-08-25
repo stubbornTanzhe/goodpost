@@ -40,3 +40,22 @@ mindset shift that will allow us to grow and develop skills that perhaps we have
 最终，这种对客观性答案的执念，会让我避免任何主观性、创造性、艺术性的东西。我总是完全压制那一半的我(艺术性等)。
 所以我现在感觉自己在奋力追赶，仍然能够发展这些内在的技能。好消息是，工程师是可以成为一个好老师、好的沟通者、好的领导的。
 我们必须打破陈旧的观念，不再压制而是来开发自己那些(艺术性的)能力。
+
+```
+There are three common myths that often plague engineers that need to be debunked,
+as they may be holding you back from reaching your full potential, especially if you are a
+current or aspiring engineering leader. They are:
+
+
+Engineers don’t have good communication skills
+Engineers don’t make "natural" leaders
+Engineers are very logical and not creative
+
+Below we will dive into each of these myths and provide some actionable ideas
+you can implement right away to start making a shift in your own life away from these limiting beliefs.
+```
+通常来说，有3个观念需要破除，这些观念可能会影响你发展自己的潜能，特别是处于一个工程师领导的角色中的时候：
+工程师没有好的沟通技巧
+工程师不会成为天然的领导者
+工程师总是有逻辑性的，缺乏创造性
+下边我们会分别深入的探讨这些不正确的观念，并且提供一些有可操作行的办法。你可以马上就开始行动，做一个改变，将这些限制从人生中去掉。
