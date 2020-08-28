@@ -59,4 +59,70 @@ you can implement right away to start making a shift in your own life away from 
 工程师不会成为天然的领导者
 工程师总是有逻辑性的，缺乏创造性
 下边我们会分别深入的探讨这些不正确的观念，并且提供一些有可操作行的办法。你可以马上就开始行动，做一个改变，将这些限制从人生中去掉。
-1
+
+
+```
+This myth goes with the belief that most engineers are introverts, 
+and the corresponding belief that introverts are bad communicators. 
+The truth is, both introverts and extroverts can be fantastic 
+communicators, as these skills can be learned and developed over time. 
+Some of my favorite people to listen and talk to in the entire world 
+are introverts. Perhaps most famously in recent years, Susan Cain is 
+developing what she calls the "Quiet Revolution" to help the world 
+recognize the power of introverts in such a noisy world. As an introvert, 
+she has overcome massive anxiety around public speaking to become a 
+prolific speaker. In the engineering world, you can look to great leaders 
+like Bill Gates (Microsoft), Steve Wozniak (Apple), and Larry Page (Google).
+
+The natural behavioral types of introvert vs. extrovert have nothing to 
+do with actual ability to communicate, but rather identify how people 
+gain energy from interpersonal interaction (and where they exist on 
+the spectrum). Humans are naturally social beings and we feel purpose 
+as we develop connections with others. Thus, developing an array of 
+communication skills is necessary for everyone to be happy and healthy.
+```
+这个谬论在于人们认为工程师都是内向性格，而内向性格都不是一个好的沟通者。  
+实际上内向并不等于不会沟通。内向外向的人都可以通过训练来得到沟通技巧。  
+一些我喜欢的并且能够跟整个世界对话的人，都是内向的人。  
+在工程师的世界里，你可以看到比尔盖茨，乔布斯等，都是内向的人。    
+内向或者外向，是人类的行为方式而已。和实际沟通的能力没关系。  
+人类是自然社会的，我们与其他人的加强关联，是有目的性的。因此，发展沟通能力，  
+是每个人获取幸福和健康的必备技能之一。  
+
+
+```
+Practice Listening
+Developing communication skills is a broad idea that covers 
+a lot of ground. To start, engineers can develop their own 
+communication abilities by really focusing on the skill of 
+listening. An important quote to remember is:
+
+Seek first to understand, then to be understood.
+
+-Stephen R. Covey
+
+The important thing to practice is truly seeking to understand 
+what others are trying to communicate to us. We can’t be 
+listening only to come up with a response if we want to be 
+effective listeners. Do you see the difference? Underneath 
+the action we take, we must truly care about the other person 
+and what they have to say.  You can often tell if someone 
+doesn’t care about what you have to say, and the same is true 
+as others are talking to you.
+
+Listening Activity: Start up a conversation with a colleague 
+and ask them an open-ended question. The question can be as 
+simple as "How was your weekend?" or "How do you think we can 
+solve this problem?" Then listen to them for two minutes 
+straight without making any verbal response other than simple 
+acknowledgements. Don’t interrupt to ask more questions. 
+Just listen. See what you learn.
+
+Simplify Communication
+```
+加强沟通技巧是一个很大的话题，包含很多方面。  
+最开始的话，工程师可以多听。有一句谚语说的好:"先理解别人，然后才能被理解"  
+重要的事情是真正寻求了解他人试图与我们交流的内容。  
+如果我们想成为有效的倾听者，我们不能只听回应。   
+你看得到差别吗？ 在我们采取的行动下，我们必须真正关心对方和他们说的话。  
+你经常可以说出某人不在乎你在说什么，就像你不在乎别人在说什么一样。
