@@ -128,4 +128,31 @@ Simplify Communication
 你经常可以说出某人不在乎你在说什么，就像你不在乎别人在说什么一样。
 可以和一些同事聊一些开放性的话题，比如“你的周末过的怎么样？”  
 “你认为我们应该怎么处理这个问题？”然后就是倾听两分钟。除了微微点头确认以外，什么也不回应。  
-不打断，就是一直听。然后看看收获了什么。  
+不打断，就是一直听。然后看看收获了什么。    
+
+```
+One common hiccup in engineering communication is explaining detailed, 
+complex ideas in detailed, complex ways. Engineers understand the whole 
+picture and are excited to share what they know. Instead of clarity and 
+collaboration, this can often lead to confusion. Reflect on this quote 
+from Albert Einstein:
+
+If you can’t explain it to a six-year-old, you don’t understand it yourself.
+
+Especially when communicating with non-technical people and working across 
+teams, get rid of jargon and share ideas using concepts the other person 
+can simply understand. Often this includes using analogies or comparisons 
+that they can relate to.
+
+Technical Communication Activity: Take the six-year-old test. Find a complex 
+idea or concept that you know very well and try and explain it to a child or 
+someone else who would be completely unfamiliar with it. See if they understand 
+and can explain it back to you. Try teaching the same idea to at least three 
+different people and see how you improve.
+```
+一个常见的场景是，一个工程师通常要在沟通中解释复杂的东西，复杂的细节，复杂的想法，复杂的办法。  
+有的时候越解释越乱。所以这里有一个经典的引用(来自爱因斯坦)是，"如果你给6岁孩子解释不通，说明你自己没懂"  
+尤其是跟非技术人员在交流或者跨团队工作的时候，不要使用工程术语，多使用简单的，别人能够理解的概念，  
+来说清楚事情。通常如类比，或者他们身边的能够理解的东西，去解释沟通。  
+实践：找一个你很懂的领域，然后找一个6岁的小朋友，或者对你熟知领域一窍不通的人。来讲解，看看他们是不是真正理解了，  
+并且能够反讲给你自己。找三个人挨个讲一讲，来练习。
