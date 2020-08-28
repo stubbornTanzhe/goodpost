@@ -59,3 +59,4 @@ you can implement right away to start making a shift in your own life away from 
 工程师不会成为天然的领导者
 工程师总是有逻辑性的，缺乏创造性
 下边我们会分别深入的探讨这些不正确的观念，并且提供一些有可操作行的办法。你可以马上就开始行动，做一个改变，将这些限制从人生中去掉。
+1
