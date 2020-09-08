@@ -117,21 +117,21 @@ and published.
 最核心的，计算机是构建在一个确定性集合的基础设施之上。这些基础设施遵循  
 严格的规则，每一个时钟都是如此。我们在这些基础设施之上构建了一层又一层的抽象层，  
 这些构建在前一层之上的抽象层次，其行为都是可复制以及确定性的。  
-计算机并不存在魔术。这些层次，没有一个是我们离开了逻辑领域去执行指令
+计算机并不存在魔术。这些层次，没有一个是我们离开了逻辑领域去执行指令  
 并且导致了任意性的决定(即所有的计算机指令都是确定性和有逻辑的)。  
-就下一层级而言，某个层级的绝大部分行为，都是可以被人理解的。所有的行为，只要  
+就下一层级而言，某个层级的绝大部分行为，都是可以被人理解的。所有的行为，只要   
 深入足够多的层级，都是可以被理解的。  
 在现代计算机系统当中，许多层级都是开源的，通过阅读源码就可以直接理解。  
 对于一个需要使用mysql数据库，需要将rails app部署在linux服务器上的ruby开发者，  
 他所使用的每一个软件都是开源的，如果需要，就可以去阅读。  
 当系统不是开源的，那通常就得有一个深入的并且详细编写的文档，在上边那个假想的系统当中，  
-我们遇到的第一个层级就是硬件自身，比如x86 cpu。intel写了数以千计的文档来描述cpu的  
+我们遇到的第一个层级就是硬件自身，比如x86 cpu。intel写了数以千计的文档来描述cpu的   
 接口，用于在执行代码时将每一点cpu的虚拟能力都物尽其用。   
 当这个系统既不是开源也没有文档的时候，系统仍然可以被逆向工程--工程师只要通过足够多的实验，  
 就可以达到这个目的。经常性的是有黑客破解了你的系统，并且给你分享了他们的结果。  
 关于这个特殊技能，安全工程师是最有经验的。我最喜欢的2个例子是谷歌zero实验室的2个例子。  
-这两个例子是由具有多年经验的高级工程师在其领域内做出的巨大努力才完成的。我并不是指  
-我可以在任何领域都这么有效率的做逆向工程。对我而言，他们证明了:  
+这两个例子是由具有多年经验的高级工程师在其领域内做出的巨大努力才完成的。我并不是指   
+我可以在任何领域都这么有效率的做逆向工程。对我而言，他们证明了:   
 1. 如果足够需要，逆向工程是可以完成的；  
 2. 如果已经完成并公开了，通常我自己就不需要做了。  
 
@@ -152,3 +152,44 @@ doesn’t answer a question I have.
 他们是怎么实现的。如果我正在写一个牛逼的东西依赖一个库或者框架，我会经常把  
 这个库或者框架的代码下载到电脑上，如果遇到了一个奇怪的行为，或者是文档对于某些问题没有答案，  
 我就会跟进去调试。  
+
+```
+Debugging
+Having this habit and knowing a lot about my dependencies 
+has definitely been a superpower for debugging tricky bugs. 
+If you work with any tool long enough, you will butt up against 
+bugs in the tool which affect you, and it’s valuable at a minimum 
+to be able to accurately describe and diagnose them in terms of 
+the tool’s abstractions, in order to produce an actionable bug 
+report or a minimal reproducer.
+
+The trickiest bugs are often those that span multiple layers, 
+or involve leaky abstraction boundaries between layers. 
+These bugs are often impossible to understand at a single layer 
+of the abstraction stack, and sometimes require the ability 
+to view a behavior from multiple levels of abstractions at 
+once to fully understand. These bugs practically require 
+finding someone on your team who is comfortable moving 
+between multiple layers of the stack, in order to track down; 
+on the flip side, to the engineers with the habit of 
+so moving around anyways, these bugs often represent an 
+engaging challenge and form the basis of their favorite war stories.
+
+One of my own favorite war stories of this genre was tracking 
+down and identifying a single-bit memory flip on my desktop. 
+This kind of problem can’t even be fully understood without 
+a good understanding of the interplay between userspace 
+libraries, the kernel, the filesystem, and the hardware. 
+My debugging war-story tumblr has a number of other great examples.
+```
+调试   
+拥有这个习惯，以及非常了解软件的依赖，成为调试那些很难的bug的利器。  
+如果你对于某些工具很有经验，就会避免工具中影响你的bug，然后就可以使用工具去  
+准确的调试和描述bug，也可以用于复现bug  
+最扯淡的bug，一般都是垮了好几个层级的，也包括跨越抽象层级的抽象边界的那种。  
+这些bug如果只懂得一个抽象层级的话是无法理解并搞定的。并且有一个bug需要一次看透   
+好多个层级才能完全理解。这些bug就需要puppy这样的同学(对多个层级都能够完全理解)    
+才能深入调试。另一方面对于更换方向的程序员来说，这些bug代表着充满挑战，同时也是他们  
+最喜欢的战争故事(没看懂原文，大概意思就是具有有人喜欢这些挑战性的bug)  
+我最喜欢的一个分析bug的文章(https://blogs.oracle.com/linux/attack-of-the-cosmic-rays-v2)  
+这种类型的bug，必须得对用户层、kennel、fs、硬件都特别了解，才能搞定。
