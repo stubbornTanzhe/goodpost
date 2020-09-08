@@ -189,7 +189,82 @@ My debugging war-story tumblr has a number of other great examples.
 最扯淡的bug，一般都是垮了好几个层级的，也包括跨越抽象层级的抽象边界的那种。  
 这些bug如果只懂得一个抽象层级的话是无法理解并搞定的。并且有一个bug需要一次看透   
 好多个层级才能完全理解。这些bug就需要puppy这样的同学(对多个层级都能够完全理解)    
-才能深入调试。另一方面对于更换方向的程序员来说，这些bug代表着充满挑战，同时也是他们  
-最喜欢的战争故事(没看懂原文，大概意思就是具有有人喜欢这些挑战性的bug)  
-我最喜欢的一个分析bug的文章(https://blogs.oracle.com/linux/attack-of-the-cosmic-rays-v2)  
-这种类型的bug，必须得对用户层、kennel、fs、硬件都特别了解，才能搞定。
+才能深入调试。另一方面对于更换方向的程序员来说，这些bug代表着充满挑战，同时也是他们    
+最喜欢的战争故事(没看懂原文，大概意思就是具有有人喜欢这些挑战性的bug)   
+我最喜欢的一个分析bug的文章(https://blogs.oracle.com/linux/attack-of-the-cosmic-rays-v2)    
+这种类型的bug，必须得对用户层、kennel、fs、硬件都特别了解，才能搞定。  
+
+```
+Documentation 
+Willingness and skill for reading source reduces your 
+reliance on documentation. If the documentation is lacking 
+in some way, you can always go to the source and look at 
+the implementation for an authoritative answer.
+
+The ability to answer questions this way is powerful to 
+have on a team, since even the best documentation tends 
+to have holes. It also has a downside, though; the engineers 
+I’ve worked with (including myself) who are the most 
+comfortable reading unfamiliar code bases are at risk of 
+habitually undervaluing documentation (since they have 
+gotten good at getting answers without it), and can be 
+even worse at documenting their own system than the median engineer.
+```
+关于文档  
+阅读源码的意愿和技能会降低你对文档的依赖。如果文档某种意义上缺实的话，  
+你总是可以通过阅读源码来得到第一视角的答案。  
+在团队中这个回答问题的能力实在是很牛逼，因为最好的文档可能都有漏洞。  
+不过这也有一个缺点，就是，我合作过的最喜欢阅读不熟悉源码的人，  
+都不太重视文档，因为他们很善于通过源码得到答案，在写文档方面，  
+比中庸的工程师还要糟糕。(译者:大师总是这样啊)  
+
+```
+Security 
+Understanding security issues very often requires 
+working at multiple levels of abstraction. An attacker 
+attacking a system isn’t bound by the documented or 
+intended behavior of any layer; she cares about how 
+the system actually behaves in practice, potentially 
+including when one layer or input is “out-of-spec.” 
+The C specification says only that a buffer overflow 
+is “undefined behavior”; understanding how to turn 
+one into remote-code-execution, or reasoning about 
+countermeasures like ASLR or DEP requires a deep 
+understanding of the actual implementation of the 
+abstract C specification by the compiler, libc, 
+underlying hardware, and more.
+
+I started my career substantially in security, 
+while working at Ksplice, which sold zero-downtime 
+software updates for the Linux kernel, primarily as 
+a security feature. I learned a lot of my current 
+skill and comfort with digging deeper into the 
+stack and understanding all the layers of abstraction 
+while spending time around a lot of security bugs there.
+```
+安全  
+理解安全问题，通常需要许多抽象层级的经验。一个骇客攻击一个系统，不是  
+按照文档的边界，或者是层级的行为来攻击的；她会关注系统实际运行表现，  
+对于某些层级或者输入，潜在的非安全性的东西。C语言的标准里只说了缓冲区溢出  
+是一个未定义的行为，如果要理解远程代码执行，或者找到ASLR/DEP的加密对策，  
+需要对于C语言的标准、编译器、libc、硬件等更多的东西深入理解。  
+
+```
+Performance 
+Understanding and reasoning about software performance 
+also often involves understanding multiple layers of 
+your stack. It’s hard to write efficient Python code 
+without some understanding of the CPython (or PyPy) 
+implementation, and you can’t write cache-efficient C code 
+without some understanding of the generated code and the 
+underlying hardware. Dig into a crowd of performance engineers, 
+and you’ll virtually always find a handful of engineers with 
+the habit of always digging deeper to continually better-understand 
+ever-more layers of abstraction.
+```
+性能  
+理解和找到软件性能表现的原因，同样需要很深的技术栈。  
+如果不懂CPython或者PyPy的话是不会写出很高效的python代码的。  
+如果不理解代码的生成以及底层硬件，也不会写出缓存效率的C代码。  
+如果与性能工程师混在一起，你会就基本上会遇到一群特别实用的工程师，  
+因为他们的习惯是挖的很深所以就能够更好的理解以及更深的理解层级内部。
