@@ -352,3 +352,303 @@ model and the ability to play it forward and backwards in time
 is an incredible aid to debugging and to learning a system.
 ```
 单步调试  
+这些系统具有良好的软件系统模型，并且觉有确定性，所以可以从较少的时间量上，  
+通过调试软件，观察跟踪堆栈、日志或者是kernel的dump文件，来对于程序的状态  
+和行为进行推断和预测。有时候开发者会因为遇到一个单纯的bug，找到系统bug根因。  
+如果对整个系统模型有经验，或者是对代码很熟悉，你就会在找问题根因这种事情上  
+经常会出现这样的对话:  
+哦，如果这个地方被设置为了NULL，肯定是有人特定赋值的，    
+并且赋值的代码位置肯定就是在这，这，以及这里。   
+并且，只有第一个和第三个地方才会设置成NULL。  
+(译者:会心一笑)  
+
+甚至于说，也许你无法直接就找到bug原因，但是，你可以不断的从调试、跟踪、读代码  
+或者是问特定的问题，在这些行为当中，提炼你对整个系统的理解，从而形成  
+更通用的理论或者说是经验。如果对于这种软件模型的经验很丰富，并且从前往后都很熟练  
+(或者翻译成倒背如流？)，会对学习整个系统帮助很大。  
+(之前的经验是，对于一个庞大的系统，确实一个人无法完全掌握；但是对于一个特定的模块  
+一个人如果可以熟练掌握，往往可以管中窥豹，明白整个系统的设计思路，这样即便在定位其他  
+模块代码的时候也会很容易就找到问题原因)  
+
+```
+Single-shot debugging in kernel engineering 
+The more complex and nondeterministic a system is, 
+the harder it gets to reliably predict behavior from 
+a small number of observations, which I think in part 
+explains the modern trend of “observability” in distributed 
+systems — you need much more data to fully explain these systems’ 
+behaviors.
+
+However, at the bottom of the stack, among systems 
+engineers and especially kernel engineers, this skill 
+set is widespread. I’ve seen threads on the LKML where 
+a developer will post a single crash log with a stack 
+trace and a register dump, and a handful of senior 
+kernel lieutenants will collaboratively go on the hunt 
+for the bug, making detailed inferences based on mapping 
+between the register dump and the compiled code, and based 
+on their understanding of all the places in the kernel that 
+deal with the implicated data structures.
+
+When I worked at Oracle (following the Ksplice acquisition), 
+I talked with some Solaris kernel engineers there, and 
+learned that they had taken this kind of approach even 
+further. They apparently had an explicit goal of a 100% 
+rate of root-causing kernel crashes based on a single 
+crash report. In order to strive for this goal they had 
+built a lot of elaborate crash-reporting and debugging 
+technology — it wasn’t just raw thinking hard about bugs 
+— but at root I think this goal comes from the deep 
+belief that their system, while complex, is understandable 
+and mostly deterministic, and that they have the ability 
+to reason about it. I found this story pretty inspiring.
+
+I think in many ways, kernel development is the prime 
+audience for this mindset. For one, it’s not uncommon, 
+especially a decade ago prior to our modern virtualization 
+era, that your only ability to debug a kernel crash is 
+by inspecting a crash dump or log trace — you may not 
+have a debugger or even the ability to continue executing 
+at all. And, for another, because the OS kernel is 
+essentially the software closest to the hardware, 
+the number of layers you have to understand to fully 
+explain your code’s behavior and interactions is 
+comparatively small. You (mostly) only need to 
+understand your C compiler / compiled code, and the 
+hardware itself. Anyone developing in userspace (atop the kernel) 
+has strictly more layers to work through.
+```
+系统越复杂，不确定性越强，很难通过少量观察来可靠地预测行为，  
+这在一定程度上解释了分布式系统中“可观察性”的现代趋势-  
+需要更多的数据来充分说明这些系统的行为。  
+
+但是，在系统工程师，尤其是内核工程师中，最底层的技能是广泛的。   
+我已经看到了LKML上的线程，在该线程上，  
+开发人员将发布带有堆栈跟踪和寄存器转储的单个崩溃日志，  
+以及几个内核日志，来定位错误原因，并根据寄存器转储和编译后的代码之间的映射，  
+以及基于他们对内核中处理隐含数据结构的所有位置的理解，    
+来做出详细的推断。 (译者:内核工程师，牛逼..)   
+当我在Oracle工作时（跟随Ksplice的收购），  
+我与那里的一些Solaris内核工程师进行了交谈，并了解到他们进一步采用了这种方法。    
+他们显然有一个明确的目标，那就是根据单个崩溃报告，    
+就可以100%的找到内核崩溃的根因。  
+为了实现这个目标，他们建立了许多精心设计的崩溃报告和调试技术-    
+不仅仅是对错误的认真思考-   
+但从根本上讲，我认为这个目标来自于人们的深信，    
+即他们的系统虽然复杂，但是可以理解的，  
+并且大多数是确定性的，并且他们有能力对此进行推理。  
+我发现这个故事很有启发性。(译者:是的，对我也很有启发)  
+
+我认为从很多方面来说，内核开发是这种思维方式的主要受众。   
+首先，尤其是在现代虚拟化时代之前的十年，  
+调试内核崩溃的唯一能力就是检查崩溃转储或日志跟踪  
+可能没有调试器，甚至没有断点后继续执行的能力。    
+另外，由于OS内核本质上是与硬件最接近的软件，因此  
+能够完整解释整个系统的代码，其实相对来说是不太多的，  
+或者说，需要了解的layer(上边提到的layer层级概念)，不会特别多。  
+ （大多数）只需要了解C编译器/已编译代码以及硬件本身。  
+ 在用户空间（内核之上）进行开发的任何人都必须严格执行更多的工作层。    
+(译者：其实看在哪一层看问题了，kernel主要是比较杂)
+
+```
+Pitfalls of this mindset 
+I want to include a note here about the pitfalls of 
+this mindset, and some places where I’ve observed it 
+leading me astray. Overall, the belief in the fundamental 
+comprehensibility of software, and the pursuit of 
+detailed mental models has served me quite well, 
+but I want to be clear that I don’t think it’s the 
+only valid or useful approach, and that it comes with 
+its own weaknesses.
+
+The need to understand 
+A belief in the understandability of software systems 
+can very easily become a need to understand the 
+systems you work with. I have become very uncomfortable 
+working in software systems where I don’t have a good 
+model of the underlying layers, and this discomfort can 
+sometimes be harmful to accomplishing my goals.
+
+I find it very hard to get started working with a 
+complex system by just following a tutorial or two 
+and performing small edits or local exploration out 
+from that example. I am uncomfortable until I understand 
+the roles and relationships of all the components I’m 
+interacting with, at least at a high level.
+
+Concretely, the other day I was attempting to stand 
+up a single HTTP endpoint backed by Amazon Lambda 
+(which I had never worked previously used). There are 
+a million tutorials about this task, both from AWS and 
+others. I’m quite confident that if I’d taken almost 
+any of these and adopted it via trial-and-error I could 
+have accomplished my task in something like 30 minutes. 
+However, instead, I stubbornly insisted on starting 
+from scratch and understanding each component I needed. 
+Since performing any task on AWS involves stitching 
+together approximately 15 different mind-numbingly-complex 
+products, I soon ended up with 30 documentation tabs open, 
+an endpoint that returned a server error no matter what 
+I tried, and still no particularly better idea what the 
+heck was going on. I eventually gave up and decided that 
+the problem wasn’t that important to solve anyways.
+
+I do believe that if I had had more time and patience, 
+I would eventually arrive at a fairly deep conceptual 
+understanding of Lambda and the adjacent AWS products, 
+and be much better equipped to debug my deployment or 
+solve future problems. However, that wasn’t my goal; I 
+just wanted something that worked, within a time budget. 
+And so, I instead just ended up without anything that 
+worked, and without much of a better understanding of 
+anything, either. The need to understand can be seductive 
+and harmful when working atop a complex system, where 
+your problem does not fundamentally require understanding 
+the whole thing.
+
+Do the easy thing first 
+I’ve lost track of the number of times that, faced 
+with a bug in a dependency, I’ve spent days digging 
+deeply into the dependency in order to identify and 
+isolate the bug … only to realize that the bug was 
+already fixed upstream, and we were pinned to an older 
+version. Or when I’ve spent time trying to debug a crash 
+in a binary that was built without debug symbols, by 
+carefully poring through a coredump and x86 disassembly, 
+only for a coworker to find a debug build, reproduce the 
+issue there, and traipse through the green pastures of a 
+working gdb session1.
+
+I have a particular set of software and systems skills, 
+which happen to include binary reverse-engineering and 
+rapidly coming up to speed on unfamiliar code bases. I 
+have these skills in part because of my obsessive desire 
+to understand the systems I work with. However, having 
+these skills doesn’t mean they’re always the right skills 
+to apply to a problem!
+
+It’s nearly always worth trying the easier approach first 
+(upgrading a dependency, reaching for the debugger, a few 
+passes of trial-and-error cargo-culting from working examples), 
+and only reach for the big guns if those tools fail you.
+```
+这个心智模型的一些陷阱  
+首先是理解的必要性  
+如果你接受了这个理论，就得去对你工作的这个软件系统，先有一个模型的理解。  
+如果对于这个模型不理解，可能就会觉得很不爽，以至于说对于完成一些特定的任务时，  
+会结果达成会有影响。    
+我会发现如果我不懂这个系统，或者说只是完成一个初学者的学习，即便是改一些很小的地方就能完成的  
+工作，我都会觉得非常不爽，要么我就是完全理解了这个系统，才能开始，或者说起码达到一个  
+很高的理解高度，才行。  
+比如放说我要通过一个aws lambda的服务，就能搞定一个特定的任务，那么  
+aws的lambda有许多的tutrial教程，只要学一下，就会用了，就可以在30分钟之内完成这个任务。  
+但是呢，我就得从0开始学，并且把每个地方都得学会。  
+所以为了搞定所有的东西，我打开了一票文档，然后这个http的endpoint返回了一个server error，  
+而我完全不知道这是什么鬼。甚至于最终放弃了解决这个不是那么重要的server error  
+
+我确实相信，如果我有更多的时间和耐心，  
+我将最终对Lambda和相关的AWS产品有一个相当深刻的概念理解，  
+并且可以更好地调试我的部署或解决未来的问题。   
+但是，那不是我的目标； 我只想要在时间预算内有效的方法。   
+因此，我最终只是没有任何有效的方法，也没有任何更好的理解。   
+在复杂的系统上工作时，要对整个系统了解的特别透，可能是诱人且有害的，    
+在这种情况下，完成任务，或者解决特定的问题从根本上不需要了解整个系统。
+(译者:说的也对，让我想起了那个很逗的图，一个像牛顿的哥们，上来看到一个框架  
+觉得说我擦这么牛逼的框架，研究一下；然后过了1小时，放弃了)
+  
+先做简单的事  
+我曾经做过很多次，就是花了好几天时间，来定位一个依赖代码里的bug，最终发现    
+社区upstream版本已经把它修复了，而我们用的是一个老的版本(译者:😂)   
+或者，当我花时间尝试在没有调试符号的情况下调试二进制文件中的崩溃时，    
+通过仔细地仔细检查coredump和x86反汇编，其实让同事找到调试版本，    
+在那里重现问题然后用gdb来搞定就好了。(译者:😂😂😂)  
+
+我有一套特殊的软件和系统技能，其中包括二进制逆向工程，   
+并且可以快速掌握不熟悉的代码库。 我之所以拥有这些技能，    
+部分原因是我渴望了解与我一起工作的系统。     
+但是，拥有这些技能并不意味着它们总是适用于问题的正确技能！  
+
+所以，杀鸡焉用牛刀！实在搞不定时再用牛逼的东西...  
+
+```
+Start with curiosity 
+I want to close with some thoughts about how to get 
+started with this mindset, and how to begin acquiring 
+concrete skill understanding unfamiliar computer systems. 
+I’ve learned my toolkit over (at this point) about two 
+decades of wrangling computer systems, and I worry about 
+inadvertently presenting a story that computers can be 
+understood, but only if you have my particular depth of 
+experience doing so. While I can only confidently write 
+from my own experiences, I do deeply believe the mindset 
+discussed here has value no matter how experienced you are.
+
+My advice for a practical upshot from this post would be: 
+cultivate a deep sense of curiosity about the systems you 
+work with. Ask questions about how they work, why they 
+work that way, and how they were built. Ask yourself 
+questions like “How would I have built this library?,” 
+identify the gaps where you don’t know the answer, and 
+add them to your mental backlog of topics to learn.
+
+For an even more tactical takeaway, I might start with 
+this: Read the source of your dependencies, if that’s 
+not already a habit you have. Do you write webapps on 
+React? Try grabbing a checkout and reading through the 
+source sometime. Are you working on a Django or Rails 
+webapp? Check out the source of the framework in question. 
+Even grab a copy of the Python or Ruby implementation, 
+and take a look inside. Much of the standard library for 
+those languages is written in the language itself, 
+so you can even get started without learning much or any C. 
+Your goal needn’t be to understand all of it at once, 
+or even ever — just to build your understanding, and 
+your confidence that you can always understand more tomorrow.
+
+Learning more about software systems is a compounding 
+skill. The more systems you’ve seen, the more patterns 
+you have available to match future systems against, and 
+the more skills and tricks and techniques you develop 
+to apply to future problems. Understanding immensely 
+complex systems may seem out of grasp at first, but the 
+more you try the easier it becomes.
+
+One of my favorite examples of an engineer who publicly 
+models this mindset is Julia Evans, who I was fortunate 
+enough to work with at Stripe. She is incredibly curious 
+about how computers work, and does an amazing job writing 
+and talking, not only about what she learns, but how she 
+learned it, and conveying a raw sense of curiosity and 
+excitement and discovery. Some of my favorite examples:
+
+Her post about how she got into kernel development is a 
+great concrete example of taking a scary area and finding a way in.
+
+Her talk on how to become a wizard mirrors many of the ideas in the post, and also comes with practical advice on how to implement them.
+
+Her post on asking great questions is an excellent resource for anyone working with others, or just who’s curious about learning more in computing!
+```
+
+我想对如何开始使用这种思维方式以及  
+如何开始获得了解不熟悉的计算机系统的具体技能的一些想法做最后的思考。  
+我已经在大约二十年的计算机系统争执中学习了我的工具包，  
+并且我担心会无意间提出一个可以理解计算机的故事，但是前提是你跟我有一样的经验。  
+虽然我只能凭自己的经验自信地写作，但我深信，  
+无论您的经验如何，这里讨论的思维方式都是有价值的。  
+
+我对这篇文章的实际建议是：对所使用的系统产生深刻的好奇心。  
+询问有关它们如何工作，为什么这样工作以及如何构建的问题。  
+多问问自己诸如“我将如何构建这个库？”之类的问题，找出您不知道答案的空白，  
+并将其添加到您要学习的主题中。  
+
+为了获得更多可落地的帮助，我可以从以下内容开始：  
+如果您还没有习惯，请阅读依赖项的来源。  
+您是否在React上编写webapp？   
+尝试获取一个结帐并在某个时间阅读源代码。  
+您正在使用Django或Rails网络应用程序吗？   
+查看有问题的框架的来源。  
+甚至可以获取Python或Ruby实现的副本，并深入了解内部。  
+这些语言的许多标准库都是用语言本身编写的，  
+因此您甚至无需学习任何C或任何C就可以上手。  
+您的目标不必是一次或什至永远都不需要理解所有的内容，  
+而只是为了构建你的对系统的理解以及对未来能永远理解的自信。  
