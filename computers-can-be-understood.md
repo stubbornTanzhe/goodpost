@@ -267,4 +267,88 @@ ever-more layers of abstraction.
 如果不懂CPython或者PyPy的话是不会写出很高效的python代码的。  
 如果不理解代码的生成以及底层硬件，也不会写出缓存效率的C代码。  
 如果与性能工程师混在一起，你会就基本上会遇到一群特别实用的工程师，  
-因为他们的习惯是挖的很深所以就能够更好的理解以及更深的理解层级内部。
+因为他们的习惯是挖的很深所以就能够更好的理解以及更深的理解层级内部。  
+
+```
+Building mental models 
+A deeply related habit to trying to learn about the underlying 
+layers of a software stack is the habit of trying to understand 
+software by building detailed mental models of the underlying 
+system. Instead of understanding systems (languages, libraries, 
+APIs, etc) solely as collections of rules and behaviors and 
+edge-cases, I try to build a smaller model of their core 
+primitives, and the rules or principles that generate the 
+larger behaviors of the system.
+
+As a concrete example, I’ve written more bash shell scrips 
+in my life than I should perhaps be proud of. At some point, 
+instead of continually memorizing specific patterns and 
+anti-patterns that happen to work or not work (when do you 
+or don’t need to quote something?), I stepped back to read 
+the bash documentation in order to understand the various 
+expansion phases that bash follows when processing a 
+command line, and which ones are applied in which order 
+in which context. This knowledge didn’t eliminate the 
+need to learn a ton of trivia to write shell scripts — 
+arguably, it added more trivia — but having a framework 
+to fit knowledge into both made it easier to retain that 
+trivia, and increased its explanatory power in the face 
+of novel problems or patterns of code.
+
+I think there’s a related belief here which ties into 
+and is reinforced by the basic belief that computers 
+are comprehensible: Computer systems tend to be, well, 
+systematic, and have some core algebra or logic that is 
+comprehensible, which is smaller than a complete list of 
+possible behaviors, and which generates or at least 
+organizes all of those behaviors. And, as an addendum, 
+I tend to believe that work invested in learning these 
+underlying systems will pay off in terms of understanding 
+and working with the system.
+```
+构建思维模型  
+一个很好的学习底层知识的习惯，就是构建底层知识的思维模型。  
+不只是要把系统(编程语言、库、api等等)当成一种规则、行为和特殊case的集合，  
+还需要去构建一个核心原语组成的模型。这个模型可以生成更大的系统  
+（我理解就是计算机底层的思想，处理问题的思维模型）  
+举个具体的例子，我写过很多bash脚本。  
+某些时候，记住一些特定的脚本套路，或者反脚本讨论，我很少做。  
+我深入阅读了bash文档，了解了bash脚本在执行一个命令行的时候是  
+如何真正去执行的，按照什么顺序，依赖了什么上下文，以及它展开的策略。   
+这个知识呢，并不会避免写shell脚本的各种细节，也许反而还增加了一些琐碎的东西。  
+但是会让你得到一个知识的框架（framework），让你能够很轻松的维护这些琐碎的细节，    
+(降低程序员的心智负担吧)并且面对新问题，能够让你更快速的理解。  
+我认为这里有一个相关的概念，并且它和"计算机是可以被理解"的概念紧密相关  
+并且还进一步增强。再提一下，计算机是可以被理解的，是说，计算机系统，是具有逻辑+代数  
+的一个系统，逻辑和代码是可以被理解的，它可能不会包含所有的逻辑和代数的行为，但应该具有大多数。  
+同时会生成这些行为，至少是组织这些行为。  
+然后，我觉得如果投入在学习基础知识层面，对于理解系统和使用系统很有好处，会得到回报。  
+
+```
+Single-shot debugging  🔗︎
+As a corollary of having good mental models of software 
+systems, and of those systems being mostly deterministic, 
+it becomes possible to make fairly detailed inferences 
+about program state and behavior off of a a small number 
+of observations about its behavior at points in time 
+(perhaps a stack trace, or a log line, or a core dump). 
+In the most extreme examples, a developer can sometimes 
+root-cause a buggy behavior based on a single encounter 
+with a bug. With a rich mental model of the system and 
+the code at hand, you can perform backwards reasoning 
+in the form of deductions like “Ah, if this field is set 
+to NULL, someone must have set it … the only code that 
+sets that field is {here}, {here}, and {here} … only the 
+first and third could ever be called with a NULL argument …” 
+and so on.
+
+Even if you can’t “one-shot” a bug, there’s a general skill 
+here of being able to formulate theories and hypotheses and 
+refine your mental models based on observations of the system, 
+which allow you to ask much more specific questions, which you 
+can then test (in a debugger, with a print statement, by reading 
+code, …), which then further refine your models. A rich mental 
+model and the ability to play it forward and backwards in time 
+is an incredible aid to debugging and to learning a system.
+```
+单步调试  
